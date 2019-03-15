@@ -33,7 +33,7 @@ def move(index,value="X")
   board[index]=value
 end
 
-def position_taken?(board, index)
+def position_taken?(index)
   !(board[index].nil? || board[index] == " ")
 end
 
