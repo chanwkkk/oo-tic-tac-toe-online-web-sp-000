@@ -105,9 +105,9 @@ def over?
 end
 
 def winner
-  if won?(board)
-    winner=won?(board)[0]
-    return board[winner]
+  if won?
+    winner=won?[0]
+    return @board[winner]
   end
 end
 
