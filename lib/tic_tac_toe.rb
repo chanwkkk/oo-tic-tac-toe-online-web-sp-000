@@ -71,7 +71,37 @@ def current_player
    #    "X"
    #else "O"
    # end
+end
 
+def won?
+WIN_COMBINATIONS.each do |combo|
+#for each combo in WIN_COMBINATIONS do
+  position_1=board[combo[0]]
+  position_2=board[combo[1]]
+  position_3=board[combo[2]]
+if (position_1=="X" && position_2=="X"&& position_3=="X") ||( position_1=="O" && position_2=="O" && position_3=="O")
+  return combo
+end
+end
+false
+end
+
+def full?
+  board.none?{|space| space==" "}
+end
+
+def draw? 
+  if full?(board) && !won?(board)
+    true
+  else false
+  end
+end
+
+def over?
+  if won?(board) || draw?(board)
+    true
+  else false
+  end
 end
 
 
