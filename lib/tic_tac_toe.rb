@@ -56,7 +56,7 @@ end
 
 def  turn_count
   count=0
-  board.each do |value|
+  @board.each do |value|
     if !(value==" ")
       count+=1
   end
@@ -76,9 +76,9 @@ end
 def won?
 WIN_COMBINATIONS.each do |combo|
 #for each combo in WIN_COMBINATIONS do
-  position_1=board[combo[0]]
-  position_2=board[combo[1]]
-  position_3=board[combo[2]]
+  position_1=@board[combo[0]]
+  position_2=@board[combo[1]]
+  position_3=@board[combo[2]]
 if (position_1=="X" && position_2=="X"&& position_3=="X") ||( position_1=="O" && position_2=="O" && position_3=="O")
   return combo
 end
@@ -87,18 +87,18 @@ false
 end
 
 def full?
-  board.none?{|space| space==" "}
+  @board.none?{|space| space==" "}
 end
 
 def draw?
-  if full?(board) && !won?(board)
+  if full? && !won?
     true
   else false
   end
 end
 
 def over?
-  if won?(board) || draw?(board)
+  if won?|| draw?
     true
   else false
   end
