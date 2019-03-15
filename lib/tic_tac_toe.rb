@@ -90,7 +90,7 @@ def full?
   board.none?{|space| space==" "}
 end
 
-def draw? 
+def draw?
   if full?(board) && !won?(board)
     true
   else false
